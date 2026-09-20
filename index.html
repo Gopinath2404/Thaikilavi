@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Thaikilavi 🐼💗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader" class="loader">
+  <div class="loader-bg-hearts"></div>
+  <div class="loader-bg-pandas"></div>
+  <div class="loader-content">
+    <div class="loader-panda">🐼</div>
+    <div class="loader-text">Preparing a little surprise for Thaikilavi...</div>
+    <div class="loader-bar-wrapper">
+      <div class="loader-bar" id="loaderBar"></div>
+      <div class="loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+</div>
+
+<!-- PANDA BACKGROUND SYSTEM -->
+<div id="pandaBackground" class="panda-background" aria-hidden="true"></div>
+
+<!-- FLOATING HEARTS & SPARKLES BACKGROUND -->
+<div id="heartsBg" class="hearts-bg"></div>
+<div id="sparklesBg" class="sparkles-bg"></div>
+<div id="cloudsBg" class="clouds-bg"></div>
+<div id="confettiContainer" class="confetti-container"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <span class="logo-panda">🐼</span>
+      <span class="logo-text">Thaikilavi</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#memories" class="nav-link">Memories</a></li>
+      <li><a href="#messages" class="nav-link">Messages</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#surprise" class="nav-link">Surprise</a></li>
+      <li><a href="#wishes" class="nav-link">Wishes</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="music-btn" id="musicBtn" title="Toggle Music">
+        <span class="music-icon">🎵</span>
+        <span class="music-text">Music</span>
+        <span class="music-status" id="musicStatus">OFF</span>
+      </button>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MUSIC AUDIO -->
+<audio id="bgMusic" loop preload="auto" volume="0.45">
+  <source src="music/Tamil%20Friendship.mp3" type="audio/mpeg">
+</audio>
+
+<!-- TAP TO PLAY FALLBACK BUTTON (shown when autoplay blocked) -->
+<button class="tap-to-play-btn" id="tapToPlayBtn" style="display:none;">
+  <span class="ttp-icon">🎵</span>
+  <span class="ttp-text">Tap to Play Music</span>
+</button>
+
+<!-- FLOATING MUSIC CONTROL (bottom-right) -->
+<div class="floating-music-control" id="floatingMusicControl">
+  <button class="floating-music-btn" id="floatingMusicBtn" title="Toggle Music">
+    <span class="fm-icon" id="floatingMusicIcon">🔇</span>
+    <span class="fm-status" id="floatingMusicStatus">Music Paused</span>
+  </button>
+</div>
+
+<!-- MAIN CONTENT -->
+<main id="mainContent" class="main-content">
+
+  <!-- 1. HERO SECTION -->
+  <section id="home" class="hero-section">
+    <div class="hero-decorations">
+      <div class="hero-balloon balloon-1">🎈</div>
+      <div class="hero-balloon balloon-2">🎈</div>
+      <div class="hero-balloon balloon-3">🎈</div>
+      <div class="hero-balloon balloon-4">🎈</div>
+      <div class="hero-sparkle sparkle-1">✨</div>
+      <div class="hero-sparkle sparkle-2">✨</div>
+      <div class="hero-sparkle sparkle-3">✨</div>
+      <div class="hero-sparkle sparkle-4">✨</div>
+      <div class="hero-flower flower-1">🌸</div>
+      <div class="hero-flower flower-2">🌺</div>
+      <div class="hero-flower flower-3">🌷</div>
+      <div class="hero-flower flower-4">💮</div>
+      <div class="hero-panda hero-panda-1">🐼</div>
+      <div class="hero-panda hero-panda-2">🎋</div>
+      <div class="hero-panda hero-panda-3">🐼</div>
+      <div class="hero-heart hero-heart-1">❤️</div>
+      <div class="hero-heart hero-heart-2">💕</div>
+      <div class="hero-heart hero-heart-3">💗</div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-greeting reveal-slide">
+        <span class="hero-mini-tag">Thaikilavi Birthday Surprise 🐼✨</span>
+        <h1 class="hero-title">
+          <span class="title-line-1">Meet My</span>
+          <span class="title-line-2">Thaikilavi <span class="title-heart">💗</span></span>
+        </h1>
+        <p class="hero-subtitle">
+          One person, countless memories, and a lifetime of friendship. 🫶
+        </p>
+        <p class="hero-mini-text">
+          My favourite troublemaker, my comfort person and my forever best friend. 🐼💗
+        </p>
+      </div>
+
+      <div class="hero-photo-wrapper reveal-slide">
+        <div class="photo-ring ring-1"></div>
+        <div class="photo-ring ring-2"></div>
+        <div class="photo-ring ring-3"></div>
+        <div class="main-photo-frame">
+          <img src="images/photo1.jpg" alt="Thaikilavi" class="main-photo">
+          <div class="photo-frame-panda top-left">🐼</div>
+          <div class="photo-frame-panda top-right">🐾</div>
+          <div class="photo-frame-panda bottom-left">💖</div>
+          <div class="photo-frame-panda bottom-right">🐼</div>
+        </div>
+        <div class="photo-floating-panda pfp-1">🐼💝</div>
+        <div class="photo-floating-panda pfp-2">🎁</div>
+        <div class="photo-floating-panda pfp-3">🐼✨</div>
+      </div>
+
+      <div class="hero-actions reveal-slide">
+        <button class="primary-btn" id="openSurpriseBtn">
+          <span>Open Your Surprise 🎁</span>
+        </button>
+        <div class="hero-quote">
+          <p>"Good things take time,<br>just like beautiful memories."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- 2. MEMORIES SECTION -->
+  <section id="memories" class="memories-section">
+    <div class="section-header reveal-slide">
+      <span class="section-mini-tag">📸 Our Friendship Timeline</span>
+      <h2 class="section-title">Our Beautiful Memories <span class="title-accent">💕</span></h2>
+      <p class="section-subtitle">Every picture tells a story from our crazy, beautiful friendship.</p>
+      <div class="header-pandas">
+        <span>🐼</span><span>🐾</span><span>✨</span><span>🐼</span>
+      </div>
+    </div>
+
+    <div class="memory-timeline" id="memoryTimeline">
+      <div class="timeline-line"></div>
+
+      <!-- Memory 01 -->
+      <div class="memory-card memory-left reveal-slide">
+        <div class="memory-number">01</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo1.jpg" alt="Thaikilavi - The Main Character" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">👑</div>
+          <div class="memory-content">
+            <h3 class="memory-title">The Main Character 👑</h3>
+            <p class="memory-caption">Graceful, simple and effortlessly beautiful. Somehow, even an ordinary moment becomes special when Thaikilavi is in it. 💗</p>
+            <span class="memory-label">Memory 01 • Main Character Energy</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+
+      <!-- Memory 02 -->
+      <div class="memory-card memory-right reveal-slide">
+        <div class="memory-number">02</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo2.jpg" alt="Partners in Crime" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">😂</div>
+          <div class="memory-content">
+            <h3 class="memory-title">Partners in Crime �</h3>
+            <p class="memory-caption">One picture, two idiots and probably a hundred stories we still laugh about. Life is always more fun with you beside me. 🫶😂</p>
+            <span class="memory-label">Memory 02 • Trouble Together</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+
+      <!-- Memory 03 -->
+      <div class="memory-card memory-left reveal-slide">
+        <div class="memory-number">03</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo3.jpg" alt="Cool Vibes" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">😎</div>
+          <div class="memory-content">
+            <h3 class="memory-title">Cool Vibes 😎</h3>
+            <p class="memory-caption">New outfit, new vibe, same Thaikilavi. No matter what the look is, the attitude is always uniquely you. 😎✨</p>
+            <span class="memory-label">Memory 03 • Same Old Crazy</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+
+      <!-- Memory 04 -->
+      <div class="memory-card memory-right reveal-slide">
+        <div class="memory-number">04</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo4.jpg" alt="Peaceful Moments" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">🌊</div>
+          <div class="memory-content">
+            <h3 class="memory-title">Peaceful Moments 🌊</h3>
+            <p class="memory-caption">A quiet place, a simple smile and one beautiful memory. These are the little moments that stay with us forever. 🌸</p>
+            <span class="memory-label">Memory 04 • Peaceful Day</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+
+      <!-- Memory 05 -->
+      <div class="memory-card memory-left reveal-slide">
+        <div class="memory-number">05</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo5.jpg" alt="Certified Crazy" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">�</div>
+          <div class="memory-content">
+            <h3 class="memory-title">Certified Crazy 😂🐼</h3>
+            <p class="memory-caption">Normal photos were never really our thing. Somehow every random moment becomes a memory worth laughing about later. 😂</p>
+            <span class="memory-label">Memory 05 • Our Crazy Side</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+
+      <!-- Memory 06 -->
+      <div class="memory-card memory-right reveal-slide">
+        <div class="memory-number">06</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo6.jpg" alt="Timeless Memory" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">🖤</div>
+          <div class="memory-content">
+            <h3 class="memory-title">Timeless Memory 🖤</h3>
+            <p class="memory-caption">Some memories don't need colour to remain beautiful. This picture holds a moment I'll always remember with a smile. 🖤</p>
+            <span class="memory-label">Memory 06 • Forever Remembered</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+
+      <!-- Memory 07 -->
+      <div class="memory-card memory-left reveal-slide">
+        <div class="memory-number">07</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo7.jpg" alt="Cute & Crazy" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">🐰</div>
+          <div class="memory-content">
+            <h3 class="memory-title">Cute & Crazy 🐰</h3>
+            <p class="memory-caption">Only you could make a random moment this cute and this funny at the same time. Another memory added to the collection. 🐰😂</p>
+            <span class="memory-label">Memory 07 • Too Cute</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+
+      <!-- Memory 08 -->
+      <div class="memory-card memory-right reveal-slide">
+        <div class="memory-number">08</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo8.jpg" alt="Just Being You" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">🌿</div>
+          <div class="memory-content">
+            <h3 class="memory-title">Just Being You 🌿</h3>
+            <p class="memory-caption">No special pose, no perfect setup — just you being yourself. And honestly, that's what makes this memory beautiful. 💗</p>
+            <span class="memory-label">Memory 08 • Simply You</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+
+      <!-- Memory 09 -->
+      <div class="memory-card memory-left reveal-slide">
+        <div class="memory-number">09</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo9.jpg" alt="Saree & Smile" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">💙</div>
+          <div class="memory-content">
+            <h3 class="memory-title">Pretty in Pink 💙</h3>
+            <p class="memory-caption">A little elegance, a little style and a whole lot of Thaikilavi. Another beautiful moment saved forever. 🌸💗</p>
+            <span class="memory-label">Memory 09 • Pretty Memory</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+
+      <!-- Memory 10 -->
+      <div class="memory-card memory-right reveal-slide">
+        <div class="memory-number">10</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo10.jpg" alt="Pretty in Pink" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">🌸</div>
+          <div class="memory-content">
+            <h3 class="memory-title"> Saree & Smile 🌸</h3>
+            <p class="memory-caption">Traditional look, beautiful smile and the same best friend behind it all. This one definitely deserves a place in the memory book. 💙✨</p>
+            <span class="memory-label">Memory 10 • Traditional Thaikilavi</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+
+      <!-- Memory 11 -->
+      <div class="memory-card memory-left reveal-slide">
+        <div class="memory-number">11</div>
+        <div class="memory-card-inner glass-card">
+          <div class="memory-image-wrap">
+            <img src="images/photo11.jpg" alt="To Be Continued" class="memory-image">
+          </div>
+          <div class="memory-deco-icon">♾️</div>
+          <div class="memory-content">
+            <h3 class="memory-title">To Be Continued... ♾️</h3>
+            <p class="memory-caption">Eleven pictures can never hold all our memories. There are still more laughs, more nonsense, more adventures and many more birthdays waiting for us. ♾️🫶</p>
+            <span class="memory-label">Memory 11 • More Memories Ahead</span>
+          </div>
+          <div class="card-panda">🐼</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BIRTHDAY STATISTICS -->
+  <section id="gallery" class="stats-section">
+    <div class="section-header reveal-slide">
+      <span class="section-mini-tag">📊 Stats Report</span>
+      <h2 class="section-title">Birthday Statistics <span class="title-accent">📊</span></h2>
+      <p class="section-subtitle">Thaikilavi's annual performance report</p>
+      <div class="header-pandas">
+        <span>🐼</span><span>💯</span><span>🐼</span>
+      </div>
+    </div>
+
+    <div class="stats-wrapper">
+      <div class="stats-card glass-card reveal-slide">
+        <div class="stats-panda-deco deco-1">🐼</div>
+        <div class="stats-panda-deco deco-2">🐾</div>
+        <div class="stats-panda-deco deco-3">🐼</div>
+
+        <div class="stat-item" data-progress="100">
+          <div class="stat-header">
+            <span class="stat-label">😊 Happiness</span>
+            <span class="stat-percent">0%</span>
+          </div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" style="width:0%; background: linear-gradient(90deg, #ff9ebb, #ff6fa5);"></div>
+          </div>
+        </div>
+
+        <div class="stat-item" data-progress="100">
+          <div class="stat-header">
+            <span class="stat-label">😄 Smiles</span>
+            <span class="stat-percent">0%</span>
+          </div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" style="width:0%; background: linear-gradient(90deg, #c5a8ff, #a78bfa);"></div>
+          </div>
+        </div>
+
+        <div class="stat-item" data-progress="100">
+          <div class="stat-header">
+            <span class="stat-label">📸 Memories</span>
+            <span class="stat-percent">0%</span>
+          </div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" style="width:0%; background: linear-gradient(90deg, #ffd59e, #ffa75e);"></div>
+          </div>
+        </div>
+
+        <div class="stat-item" data-progress="100">
+          <div class="stat-header">
+            <span class="stat-label">💖 Kindness</span>
+            <span class="stat-percent">0%</span>
+          </div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" style="width:0%; background: linear-gradient(90deg, #a8e6cf, #7fd8b8);"></div>
+          </div>
+        </div>
+
+        <div class="stat-item" data-progress="100">
+          <div class="stat-header">
+            <span class="stat-label">🤪 Craziness</span>
+            <span class="stat-percent">0%</span>
+          </div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" style="width:0%; background: linear-gradient(90deg, #ffb8d1, #ff7eb6);"></div>
+          </div>
+        </div>
+
+        <div class="stat-item" data-progress="100">
+          <div class="stat-header">
+            <span class="stat-label">❤️ Love</span>
+            <span class="stat-percent">0%</span>
+          </div>
+          <div class="stat-bar">
+            <div class="stat-bar-fill" style="width:0%; background: linear-gradient(90deg, #ff6b9d, #c44569);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TERMINAL / CODE SECTION -->
+  <section class="terminal-section">
+    <div class="section-header reveal-slide light-header">
+      <span class="section-mini-tag">💻 Source Code</span>
+      <h2 class="section-title">Thaikilavi.exe <span class="title-accent">💻</span></h2>
+      <p class="section-subtitle">Compiling happiness since day one</p>
+      <div class="header-pandas">
+        <span>🐼</span><span>⌨️</span><span>🐼</span>
+      </div>
+    </div>
+
+    <div class="terminal-wrapper reveal-slide">
+      <div class="programmer-panda left-panda">🐼⌨️</div>
+      <div class="programmer-panda right-panda">💻🐼</div>
+
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <div class="terminal-title">thaikilavi@birthday ~ file.exe</div>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="code-line welcome-line">$ Initializing Thaikilavi.exe...</div>
+          <div id="typingCode" class="typing-code"></div>
+          <div class="cursor-line"><span class="terminal-cursor">|</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HEARTFELT MESSAGE -->
+  <section id="messages" class="message-section">
+    <div class="section-header reveal-slide">
+      <span class="section-mini-tag">💌 From the Heart</span>
+      <h2 class="section-title">A Message For You <span class="title-accent">💌</span></h2>
+      <p class="section-subtitle">A personal letter from one best friend to another</p>
+      <div class="header-pandas">
+        <span>🐼</span><span>💗</span><span>🐼</span>
+      </div>
+    </div>
+
+    <div class="message-wrapper">
+      <div class="message-panda-side">
+        <div class="big-heart-panda">
+          <span class="panda-emoji">🐼</span>
+          <span class="panda-heart">💝</span>
+        </div>
+        <div class="floating-hearts-deco">
+          <span>❤️</span><span>💕</span><span>💗</span>
+        </div>
+      </div>
+
+      <div class="message-card glass-card reveal-slide">
+        <div class="message-seal wax-seal">💌</div>
+        <div class="message-content">
+          <h3 class="letter-title">Happy Birthday to My Favourite Best Friend, Thaikilavi <span class="msg-heart">❤️</span></h3>
+
+          <p class="letter-greeting">Hey Thaikilavi, <span class="msg-heart">💕</span></p>
+
+          <p class="letter-paragraph">
+            Another year, another birthday, and here I am still stuck with you. 😂<br>
+            Just kidding — honestly, I'm glad I'm stuck with you.<br>
+            Out of all the people I've met in my life, you're the one who just never leaves.<br>
+            And I really, really mean that in a good way. 🫶
+          </p>
+
+          <p class="letter-paragraph">
+            I still remember all the stupid things we've done together.<br>
+            The silly jokes, the random laughing for no reason,<br>
+            the long talks, the nonsense chats,<br>
+            the way we tease each other and laugh like there's no tomorrow.<br>
+            Even the most boring day becomes interesting when we're together. 😂✨
+          </p>
+
+          <div class="letter-highlight-fights">
+            <p class="highlight-title">The thing about us... 🐼</p>
+            <p>
+              Of course, namakkulla sanda varama irundhadhe illa. 😂<br>
+              Sometimes we fight,<br>
+              sometimes we get angry,<br>
+              sometimes we don't even want to talk to each other...
+            </p>
+            <p>
+              But somehow,<br>
+              after a little while,<br>
+              we always come back,<br>
+              talk again, tease each other,<br>
+              scold each other,<br>
+              and become normal like nothing happened. 😂❤️
+            </p>
+            <p class="highlight-sub">
+              And honestly? That's my favourite part of our friendship.<br>
+              No ego, no drama — just us, always finding our way back. 🫂
+            </p>
+          </div>
+
+          <p class="letter-paragraph">
+            You've seen me at my worst, and still chose to stay.<br>
+            You've scolded me when I was wrong,<br>
+            supported me when I needed it,<br>
+            and laughed with me when life was good.<br>
+            You know exactly how annoying I can be... and still talk to me. 😂
+          </p>
+
+          <p class="letter-paragraph">
+            Thaikilavi, you're not just a friend to me.<br>
+            You're my partner in crime, my biggest entertainment,<br>
+            my personal scolding machine 😂, my secret keeper,<br>
+            and the one person I can call at any time and say anything to.
+          </p>
+
+          <div class="letter-highlight-lifetime">
+            <p class="lifetime-title">And I just want you to know... ♾️</p>
+            <p class="lifetime-text">
+              Even if we fight a hundred times,<br>
+              even if we get angry a thousand times,<br>
+              I never want those fights to change what we have.
+            </p>
+            <p class="lifetime-text highlight-line">
+              I hope the friendship we have today<br>
+              stays with us for a lifetime. ♾️
+            </p>
+          </div>
+
+          <p class="letter-paragraph">
+            On this special day, I don't want to say anything too filmy.<br>
+            I just want to say —<br>
+            keep smiling, keep shining, keep being your crazy self,<br>
+            and never ever change.<br>
+            Because the world needs more people like you. 🌟
+          </p>
+
+          <div class="letter-final-card">
+            <div class="final-card-inner">
+              <p class="final-card-line">
+                No matter what happens,<br>
+                you'll always be my best friend. ♾️🫶
+              </p>
+              <div class="final-card-divider">🐼 💗 🐼</div>
+              <p class="final-card-footer">
+                Best Friends Forever. ❤️
+              </p>
+            </div>
+          </div>
+
+          <p class="letter-closing">
+            Happy Birthday once again, Thaikilavi! 🎂�✨
+          </p>
+        </div>
+        <div class="message-panda-corner">🐾</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SURPRISE SECTION -->
+  <section id="surprise" class="surprise-section">
+    <div class="section-header reveal-slide">
+      <span class="section-mini-tag">🎁 Extra Surprise</span>
+      <h2 class="section-title">One More Surprise... <span class="title-accent">🎁</span></h2>
+      <p class="section-subtitle">Go on, click it. You know you want to 😉</p>
+      <div class="header-pandas">
+        <span>🐼</span><span>✨</span><span>🎊</span><span>🐼</span>
+      </div>
+    </div>
+
+    <div class="surprise-content reveal-slide">
+      <div class="surprise-panda-float spf-1">🐼🎁</div>
+      <div class="surprise-panda-float spf-2">✨🐼</div>
+      <div class="surprise-panda-float spf-3">🐼💖</div>
+
+      <button class="surprise-btn" id="surpriseBigBtn">
+        <span class="btn-inner">
+          <span class="btn-panda">🐼</span>
+          <span class="btn-text">Click Here, Thaikilavi! 🐼✨</span>
+          <span class="btn-sparkle">✨</span>
+        </span>
+      </button>
+
+      <p class="surprise-hint">Something amazing awaits... 🎉</p>
+    </div>
+  </section>
+
+  <!-- SURPRISE MODAL -->
+  <div class="surprise-modal" id="surpriseModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content-wrapper">
+      <div class="modal-panda-deco mpd-1">🐼</div>
+      <div class="modal-panda-deco mpd-2">🎈</div>
+      <div class="modal-panda-deco mpd-3">🎉</div>
+      <div class="modal-panda-deco mpd-4">🐼</div>
+      <div class="modal-panda-deco mpd-5">🎊</div>
+
+      <div class="surprise-modal-content">
+        <button class="modal-close-btn" id="modalCloseBtn">×</button>
+        <div class="modal-confetti-deco">✨ 🎊 ✨</div>
+
+        <h2 class="modal-title">SURPRISE! 🎉</h2>
+
+        <p class="modal-subtitle">
+          Thaikilavi.exe has successfully completed another year! 😂
+        </p>
+
+        <div class="modal-features-section">
+          <h3 class="modal-features-title">New Features Added:</h3>
+          <ul class="modal-features-list">
+            <li>❤️ +100 Happiness</li>
+            <li>😂 +1000 Crazy Moments</li>
+            <li>✨ +∞ Beautiful Memories</li>
+            <li>🫶 Unlimited Smiles</li>
+            <li>🐼 Panda Mode: ACTIVATED</li>
+          </ul>
+        </div>
+
+        <div class="modal-status-section">
+          <h3 class="modal-status-title">Status:</h3>
+          <p class="modal-status-text">Still the same crazy Thaikilavi <span class="msg-heart">❤️</span></p>
+        </div>
+
+        <div class="modal-celebrate">🎂 👑 💖 🐼 🎈</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. FINAL CELEBRATION -->
+  <section id="wishes" class="final-section">
+    <div class="section-header reveal-slide light-header">
+      <span class="section-mini-tag">🚀 System Update</span>
+      <h2 class="section-title">Birthday Update Complete <span class="title-accent">🚀</span></h2>
+      <p class="section-subtitle">Thaikilavi v2026.0 Successfully Released 💖</p>
+      <div class="header-pandas">
+        <span>🐼</span><span>✨</span><span>🎉</span><span>✨</span><span>🐼</span>
+      </div>
+    </div>
+
+    <div class="final-cards-wrapper">
+      <!-- New Features Card -->
+      <div class="final-card glass-card reveal-slide card-pink">
+        <div class="final-card-header">
+          <span class="final-card-icon">✨</span>
+          <h3 class="final-card-title">NEW FEATURES ✨</h3>
+        </div>
+        <ul class="final-card-list">
+          <li><span class="plus">+</span> More Happiness</li>
+          <li><span class="plus">+</span> More Smiles</li>
+          <li><span class="plus">+</span> More Memories</li>
+          <li><span class="plus">+</span> More Adventures</li>
+        </ul>
+        <div class="final-card-panda">🐼💖</div>
+      </div>
+
+      <!-- Bug Fixes Card -->
+      <div class="final-card glass-card reveal-slide card-purple">
+        <div class="final-card-header">
+          <span class="final-card-icon">🐛</span>
+          <h3 class="final-card-title">BUG FIXES 🐛</h3>
+        </div>
+        <ul class="final-card-list">
+          <li><span class="minus">−</span> Sadness Removed</li>
+          <li><span class="minus">−</span> Stress Reduced</li>
+          <li><span class="minus">−</span> Tears Minimized</li>
+          <li><span class="minus">−</span> Boring Days Deleted</li>
+        </ul>
+        <div class="final-card-panda">🐼✨</div>
+      </div>
+
+      <!-- Upcoming Updates Card -->
+      <div class="final-card glass-card reveal-slide card-rose">
+        <div class="final-card-header">
+          <span class="final-card-icon">🚀</span>
+          <h3 class="final-card-title">UPCOMING UPDATES 🚀</h3>
+        </div>
+        <ul class="final-card-list">
+          <li><span class="plus">+</span> Unlimited Memories</li>
+          <li><span class="plus">+</span> Unlimited Smiles</li>
+          <li><span class="plus">+</span> More Beautiful Days</li>
+          <li><span class="plus">+</span> Lifetime Happiness</li>
+        </ul>
+        <div class="final-card-panda">🐼🎂</div>
+      </div>
+    </div>
+
+    <div class="final-message reveal-slide">
+      <div class="final-message-inner glass-card">
+        <p class="final-line-1">Happy Birthday, Thaikilavi! 🎂❤️</p>
+        <p class="final-line-2">
+          Keep smiling forever.<br>
+          Keep shining forever.<br>
+          And keep being our Thaikilavi. 🫶
+        </p>
+        <div class="final-pandas-row">
+          <span>🐼</span><span>💗</span><span>👑</span><span>✨</span><span>🎂</span><span>💕</span><span>🐼</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-panda">🐼</div>
+        <p>Made with 💗 just for Thaikilavi</p>
+        <div class="footer-year">© 4—10—2026 — Birthday Edition</div>
+      </div>
+    </footer>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
